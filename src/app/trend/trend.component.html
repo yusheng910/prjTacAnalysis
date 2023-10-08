@@ -1,0 +1,23 @@
+<div class="heading-container">
+    <h5 class="page-heading">道路交通事故各縣市件數暨肇因趨勢</h5>
+    <p class="heading-description">
+        資料來源：警政署統計查詢網；母資料異常年份/地區：99年桃園市、100年桃園市、101年桃園市、102年桃園市
+    </p>
+</div>
+
+
+
+<div class="btn-container">
+    <a routerLink="/comparison" class="button-link">
+        <button class="btn btn-success">查看特定年份統計資料</button>
+    </a>
+</div>
+
+<div class="select-container">
+    請選擇查詢縣市
+    <select class="form-select" [(ngModel)]="citySelected" (ngModelChange)="onSelect(citySelected)">
+        <option *ngFor="let city of cityList" [value]="">{{ city }}</option>
+    </select>
+</div>
+
+<div class="chart" echarts [options]="options" [merge]="mergeOptions"></div>

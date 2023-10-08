@@ -1,0 +1,23 @@
+<div class="heading-container">
+    <h5 class="page-heading">道路交通事故肇因統計- 民國{{yearSelected}}統計資料（事故總件數：{{allAccidents | number }}）</h5>
+    <p class="heading-description">
+        資料來源：警政署統計查詢網（不含國道事故資料）；母資料異常年份/地區：99年桃園市、100年桃園市、101年桃園市、102年桃園市
+    </p>
+</div>
+
+
+
+<div class="btn-container">
+    <a routerLink="/trend" class="button-link">
+        <button class="btn btn-success">查看縣市趨勢資料</button>
+    </a>
+</div>
+
+<div class="select-container">
+    請選擇查詢年份
+    <select class="form-select " [(ngModel)]="yearSelected" (ngModelChange)="onSelect(yearSelected)">
+        <option *ngFor="let year of yearList" [value]="year">民國{{ year }}</option>
+    </select>
+</div>
+
+<div class="chart" echarts [options]="options" [merge]="mergeOptions"></div>
