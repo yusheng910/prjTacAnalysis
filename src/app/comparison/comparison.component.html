@@ -7,17 +7,19 @@
 
 
 
-<div class="btn-container">
+<div class="btn-select-container">
     <a routerLink="/trend" class="button-link">
-        <button class="btn btn-success">查看縣市趨勢資料</button>
+        <button class="btn btn-success">看縣市趨勢</button>
     </a>
+    
+    <div class="select-container">
+        <span>查詢年份</span>
+        <select class="form-select " [(ngModel)]="yearSelected" (ngModelChange)="onSelect(yearSelected)">
+            <option *ngFor="let year of yearList" [value]="year">民國{{ year }}</option>
+        </select>
+    </div>
 </div>
 
-<div class="select-container">
-    請選擇查詢年份
-    <select class="form-select " [(ngModel)]="yearSelected" (ngModelChange)="onSelect(yearSelected)">
-        <option *ngFor="let year of yearList" [value]="year">民國{{ year }}</option>
-    </select>
-</div>
+
 
 <div class="chart" echarts [options]="options" [merge]="mergeOptions"></div>

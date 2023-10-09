@@ -7,17 +7,16 @@
 
 
 
-<div class="btn-container">
+<div class="btn-select-container">
     <a routerLink="/comparison" class="button-link">
-        <button class="btn btn-success">查看特定年份統計資料</button>
+        <button class="btn btn-success">看年份統計</button>
     </a>
-</div>
-
-<div class="select-container">
-    請選擇查詢縣市
-    <select class="form-select" [(ngModel)]="citySelected" (ngModelChange)="onSelect(citySelected)">
-        <option *ngFor="let city of cityList" [value]="">{{ city }}</option>
-    </select>
+    <div class="select-container">
+        <span>查詢縣市</span>
+        <select class="form-select" [(ngModel)]="citySelected" (ngModelChange)="onSelect(citySelected)">
+            <option *ngFor="let city of cityList" [value]="">{{ city }}</option>
+        </select>
+    </div>
 </div>
 
 <div class="chart" echarts [options]="options" [merge]="mergeOptions"></div>
