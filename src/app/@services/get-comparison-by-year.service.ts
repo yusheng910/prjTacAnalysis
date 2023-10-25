@@ -48,8 +48,7 @@ export class GetComparisonByYearService {
                 this.pedestrianCause = []
                 this.facilityCause = []
                 this.otherCauses = []
-
-                console.log(result);
+                
                 for (const item of result) {
 
                     this.allAccidents += item.肇事件數;

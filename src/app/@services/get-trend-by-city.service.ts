@@ -46,7 +46,6 @@ export class GetTrendByCityService {
                 this.facilityCause = []
                 this.otherCauses = []
 
-                console.log(result);
                 for (const item of result) {
 
                     this.yearList.push(item.民國年);
